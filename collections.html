@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collection – Tokyo Phantom</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f3f0eb;
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      color: #000;
+    }
+
+    .logo-header,
+    .logo-footer {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .logo-header img,
+    .logo-footer img {
+      max-width: 180px;
+      height: auto;
+    }
+
+    .collection-container {
+      max-width: 1200px;
+      margin: 60px auto 100px;
+      padding: 0 30px;
+    }
+
+    .collection-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .collection-header h1 {
+      font-size: 28px;
+    }
+
+    .view-all {
+      font-size: 14px;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      color: black;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+    }
+
+    .product-card {
+      background: #f9f8f5;
+      padding: 20px;
+      border: 1px solid #000000;
+      text-align: center;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .product-name {
+      font-size: 14px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    footer {
+      margin-top: 100px;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .collection-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+  .collection-container {
+    padding: 0 15px;
+  }
+
+  .collection-header h1 {
+    font-size: 22px;
+  }
+
+  .view-all {
+    font-size: 12px;
+  }
+
+  .products {
+    gap: 20px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .product-name,
+  .product-price {
+    font-size: 13px;
+  }
+
+  .logo-header img,
+  .logo-footer img {
+    max-width: 140px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Logo Top -->
+  <!-- Logo Top -->
+<div class="logo-header">
+    <a href="index.html">
+      <img src="images\TPLOGOINV.png" alt="Tokyo Phantom Logo" />
+    </a>
+  </div>
+  
+
+  <!-- Collection Grid -->
+  <div class="collection-container">
+    <div class="collection-header">
+      <h1>This Season’s Best Sellers</h1>
+      <a href="#" class="view-all">View All Best Sellers</a>
+    </div>
+
+    <div class="products">
+      <div class="product-card">
+        <img src="images/SWEATERTP.png" alt="Oversized Sweater">
+        <div class="product-name">Oversized Sweater</div>
+        <div class="product-price">₹999</div>
+      </div>
+      <div class="product-card">
+        <img src="images/captp.jpg" alt="Cap">
+        <div class="product-name">Cap</div>
+        <div class="product-price">₹499</div>
+      </div>
+      <div class="product-card">
+        <img src="images/TSHIRTTP.jpg" alt="Simple T-Shirt">
+        <div class="product-name">Simple t-Shirt</div>
+        <div class="product-price">₹199</div>
+      </div>
+      <div class="product-card">
+        <img src="" alt="Coming Soon">
+        <div class="product-name">Coming soon</div>
+        <div class="product-price">-</div>
+      </div>
+      <div class="product-card">
+        <img src="" alt="Coming Soon">
+        <div class="product-name">Coming soon</div>
+        <div class="product-price">-</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logo Footer -->
+  <footer class="logo-footer">
+    <img src="images\TPLOGOINV.png" alt="Tokyo Phantom Footer Logo" />
+  </footer>
+
+</body>
+</html>

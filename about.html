@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>TOKYO PHANTOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 200vh;
+      font-family: 'Playfair Display', serif;
+      background-color: #f4f3ec;
+      overflow-x: hidden;
+    }
+
+    .container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      padding: 5%;
+      transition: flex-direction 1s ease;
+    }
+
+    .logo-wrapper {
+      flex: 0 0 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-link {
+      display: inline-block;
+      height: 100%;
+    }
+
+    .logo-link img.logo {
+      height: 100%;
+      width: auto;
+      display: block;
+      transition: all 1s ease;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 5%;
+      opacity: 1;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .content.hidden {
+      opacity: 0;
+      transform: translateY(50px);
+      pointer-events: none;
+    }
+
+    .content.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    img.founder {
+      height: 500px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+ 
+    @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10% 5%;
+  }
+
+  .logo-wrapper {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .logo-link img.logo {
+    height: 150px;
+  }
+
+  .content {
+    padding: 0;
+    text-align: center;
+  }
+
+  img.founder {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="container" id="scrollContainer">
+    <div class="logo-wrapper">
+      <a href="index.html" class="logo-link">
+        <img src="images/TPLOGOINVabout.png" alt="TOKYO PHANTOM" class="logo">
+      </a>
+    </div>
+
+    <div class="content visible" id="companyContent">
+      <h2>About tOKYO PHANTOM</h2>
+      <p style="margin: 20px 0;">
+        With over 106 stores in more than 19 markets and online sales in 12 markets.  
+        All our brands and ventures share the same passion for making great and more sustainable fashion and design available to everyone.
+      </p>
+      <p><strong>→ OUR BRANDS</strong></p>
+    </div>
+
+    <div class="content hidden" id="founderContent">
+      <img src="images/boss.jpg" alt="Founder" class="founder">
+      <p><strong>Founder/CEO: Aman</strong></p>
+      <p>
+        Aman founded tOKYO PHANTOM with the goal of redefining fashion through bold identity and innovation.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById("scrollContainer");
+    const companyContent = document.getElementById("companyContent");
+    const founderContent = document.getElementById("founderContent");
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      if (scrollY > window.innerHeight / 3) {
+        container.style.flexDirection = 'row-reverse';
+        companyContent.classList.add("hidden");
+        companyContent.classList.remove("visible");
+        founderContent.classList.add("visible");
+        founderContent.classList.remove("hidden");
+      } else {
+        container.style.flexDirection = 'row';
+        companyContent.classList.remove("hidden");
+        companyContent.classList.add("visible");
+        founderContent.classList.remove("visible");
+        founderContent.classList.add("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>
