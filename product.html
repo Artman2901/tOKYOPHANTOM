@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oversized Sweater | TOKYO PHANTOM</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f2f0ea;
+      color: black;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .product-image {
+      max-width: 400px;
+      width: 100%;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    .product-details {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .product-details h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .quantity-selector button {
+      background-color: black;
+      color: white;
+      border: none;
+      font-family: 'Playfair Display', serif;
+      padding: 6px 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .quantity-selector span {
+      font-size: 16px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .buy-button {
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 15px 41px;
+      font-size: 18px;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #c0c0c0;
+      color: white;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .product-image {
+        max-width: 100%;
+      }
+
+      header {
+        justify-content: center;
+      }
+
+      .product-details {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .quantity-selector {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="images/TPLOGOINV.png" alt="TOKYO PHANTOM" class="logo">
+    </a>
+  </header>
+
+  <main>
+    <img class="product-image" src="images/SWEATERTP.png" alt="Oversized Sweater" />
+    <div class="product-details">
+      <h1>Oversized Sweater</h1>
+      <div class="price">₹999</div>
+      <div class="quantity-selector">
+        <button onclick="changeQuantity(-1)">−</button>
+        <span id="quantity">1</span>
+        <button onclick="changeQuantity(1)">+</button>
+      </div>
+      <button class="buy-button" onclick="buyNow()">Buy</button>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 tOKYO PHANTOM. All rights reserved.
+  </footer>
+
+  <script>
+    let quantity = 1;
+    const quantityDisplay = document.getElementById("quantity");
+
+    function changeQuantity(amount) {
+      quantity = Math.max(1, quantity + amount);
+      quantityDisplay.textContent = quantity;
+    }
+
+    function buyNow() {
+      alert(`You bought ${quantity} Oversized Sweater(s)!`);
+    }
+  </script>
+</body>
+</html>
